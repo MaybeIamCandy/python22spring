@@ -1,6 +1,6 @@
 '''
 Sy10-3 scores.txt文件存放着某班学生的计算机课成绩，
-包含学号、姓名、平时成绩、期末成绩四列(数据之间以Tab[ASCII:0x09]键分隔)。
+包含学号、姓名、平时成绩、期末成绩四列(数据之间以Tab[\t]键分隔)。
 请根据平时成绩占40%，期末成绩占60%的比例计算总评成绩，
 并按学号、总评成绩两列写入另一个文件scored.txt中。
 同时在屏幕上输出学生总人数，按总评成绩计算
@@ -24,7 +24,7 @@ with open('scored.txt', 'w+', encoding='utf-8') as f:
         c += 1
         splited = i.split('\t')
         #print(splited)
-        total = int(splited[2])+int(splited[3])
+        total = int(splited[2])*0.4+int(splited[3])*0.6
         class_total += total
         #print(splited[0],total)
         f.write('{}\t{}\n'.format(splited[0],total))
@@ -37,7 +37,5 @@ with open('scored.txt', 'w+', encoding='utf-8') as f:
             z += 1
         elif total < 60:
             d += 1
-    print('90分及以上{}人\n75-90分之间{}人\n60-75分之间{}人\n60分及以下{}人\n班级均分{:.2f}'.format(a,b,z,d,class_total/len(li)))
+    print('学生总人数{}人\n90分及以上{}人\n75-90分之间{}人\n60-75分之间{}人\n60分及以下{}人\n班级均分{:.2f}'.format(len(li),a,b,z,d,class_total/len(li)))
     f.close()
-
-#print(c)
