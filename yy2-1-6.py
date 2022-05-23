@@ -10,9 +10,8 @@
 【输出样例】优秀 良好 不合格 合格 良好
 '''
 
-print('输入5个成绩，用空格分隔：')
 li = []
-userInput = input().split()
+userInput = input('输入5个成绩，用空格分隔：\n').split()
 
 for i in range(len(userInput)):
     if int(userInput[i]) >= 260:
