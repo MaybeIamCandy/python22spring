@@ -25,6 +25,5 @@ def med(nums):
     # print(nums)
     return j
 
-userInput = input('请输入用空格分隔的若干个数字：\n').split()
-nums = userInput
+nums = input('请输入用空格分隔的若干个数字：\n').split()
 print(med(nums))
