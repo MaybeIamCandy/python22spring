@@ -23,4 +23,4 @@ for i in source:
 
 print('转换后的密码：')
 for j in newLi:
-    print('{}'.format(j),sep='',end='')
+    print('{}'.format(j), sep='', end='')
