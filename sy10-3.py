@@ -11,14 +11,12 @@ Sy10-3 scores.txt文件存放着某班学生的计算机课成绩，
 c = 0
 a,b,z,d = 0,0,0,0
 class_total = 0
-#text = f.read()
-#f.close()
 
 f = open('scores.txt', 'r', encoding='gb2312')
 li = f.readlines()
 li.remove(li[0])
 f.close()
-#print(li)
+
 with open('scored.txt', 'w+', encoding='utf-8') as f:
     for i in li:
         c += 1
@@ -38,4 +36,3 @@ with open('scored.txt', 'w+', encoding='utf-8') as f:
         elif total < 60:
             d += 1
     print('学生总人数{}人\n90分及以上{}人\n75-90分之间{}人\n60-75分之间{}人\n60分及以下{}人\n班级均分{:.2f}'.format(len(li),a,b,z,d,class_total/len(li)))
-    f.close()
