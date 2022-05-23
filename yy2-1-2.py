@@ -7,20 +7,12 @@
 【输入样例】ks1690
 【输出样例】ks2701
 '''
-
-li = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-newLi = []
-source = input('请输入原密码：\n')
-
-for i in source:
-    if i in li:
-        if not i == '9':
-            newLi.append(int(i)+1)
-        else:
-            newLi.append(0)
-    else:
-        newLi.append(i)
-
+m = input('请输入原密码：\n')
 print('转换后的密码：')
-for j in newLi:
-    print('{}'.format(j), sep='', end='')
+for i in m:
+    if '0' <= i < '9':
+        print(int(i)+1, sep='', end='')
+    elif i == '9':
+        print(0, sep='', end='')
+    else:
+        print(i, sep='', end='')
